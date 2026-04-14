@@ -86,7 +86,7 @@ jobs:
           terraform apply -auto-approve \
             -var="project_name=${{ secrets.PROJECT_NAME }}" \
             -var="aws_region=${{ secrets.AWS_REGION }}" \
-            -var="container_image=${{ needs.build_push.outputs.image_tag }}"
+            -var="image_tag=${{ needs.build_push.outputs.image_tag }}"
       - name: Get ALB DNS
         id: alb
         working-directory: terraform
